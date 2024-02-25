@@ -1,6 +1,8 @@
-public interface BorrowableInterface {
-    
-    // public static final double g = 10.00;
+import java.util.ArrayList;
 
-    // void books();
+public interface BorrowableInterface {
+
+    void borrowBook();
+    void returnBook();
+
 }

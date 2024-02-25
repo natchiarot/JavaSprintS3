@@ -9,12 +9,6 @@ public class Book implements BorrowableInterface{
     private int copiesNum;
     private Status status;
 
-    public enum Status {
-        AVAILABLE,
-        CHECKED_OUT,
-        OVERDUE
-    }
-
     public Book(String title, Author author, int ISBN, String publisher, int copiesNum) {
         this.title = title;
         this.author = author;
@@ -23,36 +17,14 @@ public class Book implements BorrowableInterface{
         this.copiesNum = copiesNum;
     }
     
-    public static Author createAuthor(String name) {
-        return new Author(name);
-    }
+    // public static Author createAuthor(String name) {
+    //     return new Author(name);
+    // }
 
-    public static Book userInputBook() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter book title: ");
-        String title = scanner.nextLine();
-
-        System.out.print("Enter the author: ");
-        String authorName = scanner.nextLine();
-
-        Author author = createAuthor(authorName);
-
-        System.out.print("Enter the ISBN: ");
-        int ISBN = scanner.nextInt();
-
-        System.out.print("Enter the pubilsher: ");
-        scanner.nextLine();  // This is done because the nextInt can be unpredictable and there can be leftover newline character. Ensures the input is read correctly.
-        String publisher = scanner.nextLine();
-
-        System.out.print("Enter the number of copies: ");
-        int copiesNum = scanner.nextInt();
-
-        scanner.close();
-
-        // Creating a new book with the details input by the user.
-        return new Book(title, author, ISBN, publisher, copiesNum);  // Note** will have to do .add in demo due to class type?
-    }
+    // Note** will have to create a new Author in demo file but this is so all information about the author is available?
+    // public static Book addNewBook(String title, Author author, int ISBN, String publisher, int copiesNum) {
+    //     return new Book(title, author, ISBN, publisher, copiesNum);
+    // }
 
     public Author getAuthor() {
         return author;
@@ -91,7 +63,19 @@ public class Book implements BorrowableInterface{
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    // From borrowable interface.
+    @Override
+    public void borrowBook() {
+
+    }
+
+    @Override
+    public void returnBook() {
+
+    }
     
+    @Override
     public String toString(){
         return(this.title + "Author: " + this.author + ", (ISBN: " + this.ISBN + ") Published by: " + this.publisher + ", Copies number: " + this.copiesNum);
     }
