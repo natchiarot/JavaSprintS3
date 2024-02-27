@@ -65,14 +65,26 @@ public class Book implements BorrowableInterface{
     }
 
     // From borrowable interface.
+    // Note** numCopies will be the number the user enters to borrow?
     @Override
-    public void borrowBook() {
-
+    public void borrowBook(Book book, int numCopies) {
+        if (book.getCopiesNum() >= numCopies) {
+            book.setCopiesNum(book.getCopiesNum() - numCopies);
+            System.out.println(numCopies + " copies of " + book.getTitle() + "were borrowed successfully.");
+        } else {
+            System.out.println("Not enough copies available to borrow.");
+        }
     }
 
     @Override
-    public void returnBook() {
-
+    public void returnBook(Book book, int numCopies) {
+        if(numCopies <= book.getCopiesNum()) {
+            book.setCopiesNum(book.getCopiesNum() - numCopies);
+            System.out.println(numCopies + " copies of " + book.getTitle() + " have been returned successfully.");
+        } else {
+            System.out.println("Number of copies to return exceeds the number of copies borrowed.");
+        }
+        
     }
     
     @Override

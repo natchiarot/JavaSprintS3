@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Library{
 
@@ -38,15 +39,14 @@ public class Library{
         return authorResults;
     }
 
-    public ArrayList<Book> searchByISBN(int ISBN) {
-        ArrayList<Book> ISBNResults = new ArrayList<>();
+    public Book searchByISBN(int ISBN) {
         for(int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
             if (book.getISBN() == ISBN) {
-                ISBNResults.add(book);
+                return book;
             }
         }
-        return ISBNResults;
+        return null;  // Book was not found.
     }
 
     // BOOK HANDLING
@@ -104,6 +104,104 @@ public class Library{
     // Method to delete a patron from the patrons list.
     public void deletePatron(Patron patron) {
         patrons.remove(patron);
+    }
+
+    // Note** need to handle logic for searching for the books by specific type.
+    public void borrowBook(Patron patron, Book book, String searchType, String searchTerm, int numCopies) {
+        ArrayList<Book> searchResults = null;
+        switch(searchType.toLowerCase()) {
+            case "title":
+                searchResults = searchByTitle(searchTerm);
+                break;
+            case "author":
+                searchResults = searchByAuthor(searchTerm);
+                break;
+            // ISBN although should* always only return a single book i used an ArrayList so it remains consistent with the other search methods.
+            case "isbn":
+            searchResults = new ArrayList<>();  // New ArrayList to hold search results.
+                book = searchByISBN(Integer.parseInt(searchTerm));
+                if(book != null) {
+                    searchResults.add(book);
+                }
+                break;
+            default:
+                System.out.println("Invalid search type.");
+                break;
+        }
+
+        if(searchResults != null && !searchResults.isEmpty()) {
+            // Display search results
+            System.out.println("Search results: ");
+            for (int i = 0; i < numCopies; i++) {
+                System.out.println(book.toString());
+            }
+            Scanner scanner = new Scanner(System.in);
+
+            // Assumes first book*
+            Book selectedBook = searchResults.get(0);
+            System.out.println("Enter the amount of copies of " + selectedBook.getTitle() + " you would like to borrow: ");
+
+            numCopies = Integer.parseInt(scanner.nextLine());
+            scanner.close();
+            
+            selectedBook.borrowBook(selectedBook, numCopies);
+            patron.borrowBook(selectedBook, numCopies);
+        } else {
+            System.out.println("No books found matching search criteria.");
+        }
+
+    }
+
+    // Note** need to allow patrons to search through borrowed books*.
+    public void returnBook(Patron patron, Book book, String searchType, String searchTerm, int numCopies) {
+            ArrayList<Book> searchResults = null;
+            switch(searchType.toLowerCase()) {
+                case "title":
+                    searchResults = searchByTitle(searchTerm);
+                    break;
+                case "author":
+                    searchResults = searchByAuthor(searchTerm);
+                    break;
+                // ISBN although should* always only return a single book i used an ArrayList so it remains consistent with the other search methods.
+                case "isbn":
+                searchResults = new ArrayList<>();  // New ArrayList to hold search results.
+                    Book resultBook = searchByISBN(Integer.parseInt(searchTerm));
+                    if(resultBook != null) {
+                        searchResults.add(resultBook);
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid search type.");
+                    break;
+            }
+    
+            if(searchResults != null && !searchResults.isEmpty()) {
+                // Display search results
+                System.out.println("Search results: ");
+                for (int i = 0; i < searchResults.size(); i++) {
+                    Book resultBook = searchResults.get(i);
+                    System.out.println(resultBook.toString());
+                }
+                
+                Scanner scanner = new Scanner(System.in);
+    
+                // Assumes first book*
+                Book selectedBook = searchResults.get(0);
+                System.out.println("Enter the amount of copies of " + selectedBook.getTitle() + " you would like to return: ");
+
+                int copiesToReturn = Integer.parseInt(scanner.nextLine());
+    
+                scanner.close();
+
+                for (int i = 0; i < searchResults.size(); i++) {
+                    Book resultBook = searchResults.get(i);
+                    resultBook.returnBook(resultBook, copiesToReturn);
+                    patron.returnBook(resultBook, copiesToReturn);
+                }
+                
+            } else {
+                System.out.println("No books found matching search criteria.");
+            }
     }
 
     // // Method to get the list of all the patrons.
