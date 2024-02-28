@@ -1,6 +1,20 @@
+/**
+ * The BorrowableInterface represents the behavior of an object that can be borrowed and returned.
+ */
 public interface BorrowableInterface {
-    
-    // public static final double g = 10.00;
 
-    // void books();
+    /**
+     * Borrows a specified number of copies of a book.
+     * @param book The book to be borrowed.
+     * @param numCopies The number of copies to borrow.
+     */
+    void borrowBook(Book book, int numCopies);
+
+    /**
+     * Returns a specified number of copies of a book.
+     * @param book The book to be returned.
+     * @param numCopies The number of copies to return.
+     */
+    void returnBook(Book book, int numCopies);
+
 }
