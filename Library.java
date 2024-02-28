@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-public class Library{
-    
-=======
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -342,5 +338,4 @@ public class Library{
                 System.out.println("No books found matching search criteria.");
             }
     }
->>>>>>> Stashed changes
 }
