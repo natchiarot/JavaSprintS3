@@ -91,12 +91,21 @@ public class Patron {
         this.phoneNum = phoneNum;
     }
 
-    // Method to add a new patron to the patrons list.
+    /**
+     * Adds a new patron to the patrons list.
+     * 
+     * @param patron The patron to add.
+     */
     public static void addPatron(Patron patron){
         patrons.add(patron);
     }
 
-    // Method to edit an existing patron in patron list.
+    /**
+     * Edits an existing patron in the patrons list.
+     * 
+     * @param index The index of the patron to edit.
+     * @param patron The updated patron object.
+     */
     public static void editPatron(int index, Patron patron) {
         if (index >= 0 && index < patrons.size()) {
         patrons.set(index, patron);
@@ -105,12 +114,20 @@ public class Patron {
         }
     }
 
-    // Method to delete a patron from the patrons list.
+    /**
+     * Deletes a patron from the patrons list.
+     * 
+     * @param patron The patron to delete.
+     */
     public static void deletePatron(Patron patron) {
         patrons.remove(patron);
     }
 
-    // Method to get the list of all the patrons.
+    /**
+     * Gets the list of all the patrons.
+     * 
+     * @return The list of all the patrons.
+     */
     public static ArrayList<Patron> getPatrons() {
         return patrons;
     }

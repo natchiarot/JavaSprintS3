@@ -8,7 +8,14 @@ public class Author{
     private String name; 
     private LocalDate DOB; 
     private ArrayList<Book> bookList; 
-
+    
+    /**
+     * Constructs an Author object with the specified name, date of birth, and list of books authored.
+     * 
+     * @param name The name of the author.
+     * @param DOB The date of birth of the author.
+     * @param bookList The list of books authored by the author.
+     */
     public Author(String name, LocalDate DOB, ArrayList<Book> bookList) {
         this.name = name;
         this.DOB = DOB;
@@ -31,15 +38,29 @@ public class Author{
         return new ArrayList<>(bookList);
     }
 
-    // Note** methods to add and remove books from the author's book list.
+    /**
+     * Adds a book to the list of books authored by the author.
+     * 
+     * @param book The book to add.
+     */
     public void addBook(Book book) {
         bookList.add(book);
     }
 
+    /**
+     * Removes a book from the list of books authored by the author.
+     * 
+     * @param book The book to remove.
+     */
     public void removeBook(Book book) {
         bookList.remove(book);
     }
 
+    /**
+     * Gets the date of birth of the author.
+     * 
+     * @return The date of birth of the author.
+     */
     public LocalDate getDOB() {
         return DOB;
     }
@@ -76,6 +97,11 @@ public class Author{
         this.name = name;
     }
 
+    /**
+    * Returns a string representation of the Author object.
+    * 
+    * @return A string containing the author's name, date of birth, and list of books authored.
+    */
     @Override
     public String toString() {
         return(this.name + ", " + this.DOB + ", \n List of Books: " + this.bookList);

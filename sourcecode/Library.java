@@ -110,7 +110,7 @@ public class Library{
      * @param ISBN The ISBN of the book to be edited.
      * @param updatedBook The updated information of the book.
      */
-    public void editBook(int ISBN, Book updatedBook) {
+    public void editBook(long ISBN, Book updatedBook) {
         boolean found = false;
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
@@ -129,7 +129,7 @@ public class Library{
      * Deletes a book from the library.
      * @param book The book to be deleted from the library.
      */
-    public void deleteBook(Book book) {
+    public void removeBook(Book book) {
         books.remove(book);
     }
 
@@ -164,10 +164,24 @@ public class Library{
 
     /**
      * Deletes an author from the library.
-     * @param author The author to be deleted from the library.
+     * 
+     * @param authorToRemove The author to be deleted from the library.
      */
-    public void deleteAuthor(Author author) {
-        authors.remove(author);
+    public void removeAuthor(Author authorToRemove) {
+        boolean found = false;
+        for (Author author : authors) {
+            if (author.getName().equalsIgnoreCase(authorToRemove.getName())) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            authors.remove(authorToRemove);
+            System.out.println("Author removed successfully!");
+        } else {
+            System.out.println("Author not found in the library.");
+        }
     }
 
     // PATRON HANDLING
@@ -203,7 +217,7 @@ public class Library{
      * Deletes a patron from the library.
      * @param patron The patron to be deleted from the library.
      */
-    public void deletePatron(Patron patron) {
+    public void removePatron(Patron patron) {
         patrons.remove(patron);
     }
 

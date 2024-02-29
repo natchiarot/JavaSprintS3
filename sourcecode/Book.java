@@ -167,10 +167,10 @@ public class Book implements BorrowableInterface{
 
     /**
     * Sets the status of the book.
-    * @param status The status of the book.
+    * @param overdue The status of the book.
     */
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(Status overdue) {
+        this.status = overdue;
     }
 
     /**
