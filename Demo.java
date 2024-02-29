@@ -47,6 +47,7 @@ public class Demo {
 
                 System.out.print("Enter your choice: ");
                 int choice = scanner.nextInt();
+                scanner.nextLine(); // Consume the newline character
 
                 switch (choice) {
                     case 1:
