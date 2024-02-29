@@ -1,0 +1,42 @@
+book,"Resident, The",Maureen Dickon,8514801716,Cartwright-Hyatt,14,AVAILABLE
+book,Already Dead,Bryana Train,1788405676,Waelchi LLC,14,AVAILABLE
+book,"Lion King, The",Mozes Ragborne,5866636018,Kunze-McCullough,7,AVAILABLE
+book,"Little Girl Who Conquered Time, The (Toki o kakeru shôjo)",Cicily Pollak,3594452190,Strosin-Kovacek,5,AVAILABLE
+book,Pale Rider,Mallory Bouzek,6547052095,"Zulauf, Kuhic and Kessler",1,AVAILABLE
+book,Hulk Vs.,Bordy Buffin,933766108,Rice-Spinka,14,AVAILABLE
+book,Hoodwinked!,Pennie Livings,7650784428,Jaskolski and Sons,11,AVAILABLE
+book,"Greystoke: The Legend of Tarzan, Lord of the Apes",Dane Teaze,427524026,"Nolan, Franecki and Jacobi",9,AVAILABLE
+book,From Russia with Love,Linell Lampett,1466340061,"Kessler, Littel and Stoltenberg",6,AVAILABLE
+book,"Congress, The",Jermayne Tripet,2988139628,"Crona, Durgan and Braun",7,AVAILABLE
+book,The Iron Commissioner,Maureen Dickon,8177761528,Turcotte Group,9,AVAILABLE
+book,"Goofy Movie, A",Bryana Train,2247742009,Schultz-Paucek,6,AVAILABLE
+book,Budd Boetticher: An American Original ,Mozes Ragborne,6668034098,Satterfield-Roob,12,AVAILABLE
+book,Gold Diggers of 1937,Cicily Pollak,7762664270,"Weimann, Wisoky and Kuphal",8,AVAILABLE
+book,Munger Road,Mallory Bouzek,5787297458,"Roob, Emard and Gorczany",4,AVAILABLE
+
+author,Maureen Dickon,1954-11-29
+author,Bryana Train,1948-03-18
+author,Mozes Ragborne,1995-08-18
+author,Cicily Pollak,1994-09-11
+author,Mallory Bouzek,2005-05-12
+author,Bordy Buffin,1987-03-02
+author,Pennie Livings,1993-10-03
+author,Dane Teaze,1976-07-21
+author,Linell Lampett,1988-02-13
+author,Jermayne Tripet,1941-12-03
+
+patron,Krishna Gamble,42 Monument Center,(814) 1934918,"Resident, The",Already Dead
+patron,Noreen MacPhee,1503 Sachs Crossing,(204) 9217796,"Lion King, The","Little Girl Who Conquered Time, The (Toki o kakeru shôjo)"
+patron,Gonzales Lidyard,224 New Castle Plaza,(494) 1213334,Pale Rider,Hulk Vs.
+patron,Daniele Limbourne,703 Ridge Oak Lane,(101) 5595960,Hoodwinked!,"Greystoke: The Legend of Tarzan, Lord of the Apes"
+patron,Vivian Demko,43 Brentwood Court,(328) 2745098,"Goofy Movie, A","Congress, The"
+patron,Fleur Cleft,4 Cody Way,(103) 3588443,The Iron Commissioner,"Congress, The"
+patron,Doreen Benne,8443 Dapin Crossing,(635) 4610815,"Little Girl Who Conquered Time, The (Toki o kakeru shôjo)",Hoodwinked!
+patron,Cher Dellit,37 Clove Center,(694) 3481173,Gold Diggers of 1937,Munger Road
+patron,Carolee Bard,4099 Holmberg Circle,(838) 6318229,Gold Diggers of 1937,"Goofy Movie, A"
+patron,Rachele Wauchope,8013 Gulseth Avenue,(562) 2386430,Hulk Vs.,The Iron Commissioner
+patron,Hamel Rubinshtein,774 Surrey Lane,(918) 5907896,Budd Boetticher: An American Original ,Munger Road
+patron,Tybie Gobert,1618 Sugar Lane,(530) 6858379,Gold Diggers of 1937,Munger Road
+patron,Percival Fishbourne,130 Knutson Trail,(389) 4641311,Hulk Vs.,The Iron Commissioner
+patron,Annabel Galia,79 Manufacturers Way,(117) 5693279,"Resident, The",Pale Rider
+patron,Binny Beddin,12 Arrowood Junction,(993) 5064401,The Iron Commissioner,Hoodwinked!
